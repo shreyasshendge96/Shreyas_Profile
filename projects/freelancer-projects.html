@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freelancer | Shreyas Shendge</title>
+    <link rel="stylesheet" href="../css/cinematic.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js" defer></script>
+    <script src="../js/cinematic.js" defer></script>
+    <style>
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .work-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 3rem;
+            border-radius: 1.5rem;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .work-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-10px);
+        }
+
+        .btn-more {
+            background: none;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #fff;
+            padding: 0.6rem 1.2rem;
+            border-radius: 0.5rem;
+            font-size: 0.8rem;
+            cursor: pointer;
+            margin-top: 1.5rem;
+            transition: all 0.3s;
+            align-self: flex-start;
+        }
+
+        .btn-more:hover {
+            background: #fff;
+            color: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav-tabs">
+        <a href="../index.html" class="nav-tab">Home</a>
+        <a href="about.html" class="nav-tab">About</a>
+        <a href="company.html" class="nav-tab">Company</a>
+        <a href="freelancer-projects.html" class="nav-tab active">Freelancer</a>
+        <a href="ai-projects.html" class="nav-tab">AI MODELS</a>
+        <a href="technologies.html" class="nav-tab">Technology</a>
+    </nav>
+
+    <section class="section">
+        <video autoplay muted loop playsinline class="bg-video">
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-hand-working-on-a-tablet-42215-large.mp4"
+                type="video/mp4">
+        </video>
+        <div class="content-wrapper" style="max-width: 1400px;">
+            <p class="subtitle">Bespoke Engineering</p>
+            <h1 class="title">Freelance Work</h1>
+            <div class="work-grid">
+                <!-- Project 1 -->
+                <div class="work-card reveal">
+                    <div>
+                        <h3>Dr. Salakki Skincare</h3>
+                        <p class="project-desc">A complete clinic management ecosystem featuring patient booking,
+                            dashboards, and automated report generation.</p>
+                    </div>
+                    <button class="btn-more" onclick="openModal('salakki')">More Information</button>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="work-card reveal">
+                    <div>
+                        <h3>Healthcare Kiosk</h3>
+                        <p class="project-desc">A full-stack kiosk solution for patient registration, with multi-lingual
+                            support and automated clinical summaries.</p>
+                    </div>
+                    <button class="btn-more" onclick="openModal('kiosk')">More Information</button>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="work-card reveal">
+                    <div>
+                        <h3>Hotel POS-KDS</h3>
+                        <p class="project-desc">Integrated Point of Sale and Kitchen Display System for high-volume
+                            hospitality management.</p>
+                    </div>
+                    <button class="btn-more" onclick="openModal('pos-kds')">More Information</button>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="work-card reveal">
+                    <div>
+                        <h3>Hospital Management</h3>
+                        <p class="project-desc">A professional healthcare orchestration platform for managing patient
+                            appointments, clinical data, and reception workflows.</p>
+                    </div>
+                    <button class="btn-more" onclick="openModal('hospital')">More Information</button>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="work-card reveal">
+                    <div>
+                        <h3>Novgue Pharma Agency</h3>
+                        <p class="project-desc">A leading pharmaceutical advertising platform specializing in
+                            high-impact medical campaigns and event orchestration.</p>
+                    </div>
+                    <button class="btn-more" onclick="openModal('novgue')">More Information</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODALS -->
+    <div class="modal-overlay" id="project-modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <div class="modal-body" id="modal-body-content">
+                <!-- Content will be injected by JS -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const projectData = {
+            'salakki': {
+                title: "Dr. Salakki's Skincare Clinic Management",
+                content: `Dr. Salakki's Skincare is a complete web application built to streamline clinic operations. It provides a seamless interface for patients to book appointments, upload medical photos (stored as Base64), and communicate their concerns directly to the doctor.<br><br>
+                <strong>Key Features:</strong><br>
+                • Patient appointment booking with status tracking.<br>
+                • Dual dashboards: Doctor Dashboard for record management and Admin Dashboard for user control.<br>
+                • Innovative Storage: Uses Excel (.xlsx) as the primary database for lightweight, zero-maintenance deployment.<br>
+                • Security: Implements JWT authentication and Bcrypt password hashing.<br>
+                • Tech Stack: React 18, Node.js, Express, Tailwind CSS, and Lucide React icons.`
+            },
+            'kiosk': {
+                title: 'Healthcare Voice Assistant Kiosk',
+                content: `An intelligent, zero-connectivity healthcare kiosk designed for high-privacy patient intake and triage. It utilizes advanced offline speech processing to ensure zero-loss data integrity in clinical environments.<br><br>
+                <strong>Key Features:</strong><br>
+                • <strong>Fully Offline Intelligence:</strong> Operates without an internet connection, using local VOSK models for high-accuracy speech-to-text conversion.<br>
+                • <strong>Voice-First Interaction:</strong> Automated guidance via Text-to-Speech (TTS) prompts for name, age, and symptom collection.<br>
+                • <strong>Natural Extraction:</strong> Intelligently extracts structured data from conversational inputs, saving medical symptom descriptions as secure .wav recordings.<br>
+                • <strong>Tech Stack:</strong> Python, PyQt5, VOSK (STT), pyttsx3 (TTS), and sounddevice architecture.`
+            },
+            'pos-kds': {
+                title: 'HotelDelish - POS & Kitchen Display System',
+                content: `HotelDelish is a high-performance, real-time restaurant management ecosystem. It bridges the gap between customer ordering and kitchen production using low-latency socket communication.<br><br>
+                <strong>Key Features:</strong><br>
+                • <strong>Real-Time Orchestration:</strong> Powered by Socket.IO for instant order notifications to kitchen staff and live status updates for customers.<br>
+                • <strong>Role-Based Access:</strong> Specialized dashboards for Owners (full control), Managers (read-only monitoring), and Kitchen Staff (status management).<br>
+                • <strong>Customer Experience:</strong> Interactive menu with category filtering, digital table selection, and instant order completion alerts.<br>
+                • <strong>Tech Stack:</strong> React 18, TailwindCSS, Framer Motion, Node.js, Express, Sequelize ORM, and PostgreSQL.`
+            },
+            'hospital': {
+                title: 'Hospital Management & Appointment System',
+                content: `A robust, enterprise-grade Hospital Management System designed for high-efficiency patient flow and clinical transparency.<br><br>
+                <strong>Key Features:</strong><br>
+                • <strong>Workflow Automation:</strong> Streamlined appointment booking and patient registration pipelines.<br>
+                • <strong>Reception Dashboard:</strong> Dedicated interface for real-time patient queue management and data consistency.<br>
+                • <strong>Digital Medical Records:</strong> Secure orchestration of patient history, open-case management, and folder-level data access for doctors.<br>
+                • <strong>Enterprise Foundation:</strong> Scalable PostgreSQL architecture with an Express/Node.js backend and a modern React frontend.`
+            },
+            'novgue': {
+                title: 'Novgue - Leading Pharma Advertising Agency',
+                content: `Novgue is a premier advertising agency dedicated to the pharmaceutical sector, providing cutting-edge digital platforms for high-reach medical campaigns and professional events.<br><br>
+                <strong>Key Features:</strong><br>
+                • <strong>Pharma Campaign Hub:</strong> Specialized tools for orchestrating large-scale pharmaceutical product launches and awareness campaigns.<br>
+                • <strong>Event Orchestration:</strong> Integrated modules for managing medical conferences, webinars, and pharmaceutical exhibitions.<br>
+                • <strong>High-End Visual Identity:</strong> A premium, animated web presence designed to build institutional trust and showcase product innovation.<br>
+                • <strong>Advanced Interactions:</strong> Utilizes GSAP and cinematic physics to create an engaging experience for HCPs (Healthcare Professionals) and stakeholders.`
+            }
+        };
+
+        function openModal(projectId) {
+            const data = projectData[projectId];
+            const modal = document.getElementById('project-modal');
+            const content = document.getElementById('modal-body-content');
+
+            content.innerHTML = `<h2>${data.title}</h2><p>${data.content}</p>`;
+            modal.classList.add('active');
+
+            if (window.lenis) window.lenis.stop();
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('project-modal');
+            modal.classList.remove('active');
+            if (window.lenis) window.lenis.start();
+        }
+
+        document.getElementById('project-modal').addEventListener('click', function (e) {
+            if (e.target === this) closeModal();
+        });
+    </script>
+</body>
+
+</html>

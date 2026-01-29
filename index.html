@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shreyas Shendge | AI-ML & Prompt Engineer</title>
+    <link rel="stylesheet" href="css/cinematic.css">
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js" defer></script>
+    <script src="js/cinematic.js" defer></script>
+    <style>
+        /* Dynamic Background Component */
+        .dynamic-bg-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .bg-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 2s ease-in-out;
+            object-fit: cover;
+            filter: brightness(0.3) saturate(1.2);
+        }
+
+        .bg-layer.active {
+            opacity: 0.6;
+        }
+
+        /* Value Section Styles */
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            text-align: left;
+        }
+
+        .value-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 2.5rem;
+            border-radius: 1.5rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .value-card h3 {
+            color: #fff;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .value-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Profile Section Styles */
+        .profile-section {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .profile-img-container {
+            flex: 1;
+            max-width: 400px;
+            position: relative;
+        }
+
+        .profile-img {
+            width: 100%;
+            height: auto;
+            border-radius: 2rem;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            filter: grayscale(0.2) contrast(1.1);
+            transition: transform 0.5s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.02);
+        }
+
+        .profile-details {
+            flex: 1.5;
+        }
+
+        .profile-details h2 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, #fff, #888);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .profile-details .bio-item {
+            margin-bottom: 2rem;
+        }
+
+        .profile-details .bio-item h4 {
+            font-size: 0.8rem;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            margin-bottom: 0.5rem;
+            opacity: 0.6;
+        }
+
+        .profile-details .bio-item p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 900px) {
+            .profile-section {
+                flex-direction: column;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .profile-img-container {
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- DYNAMIC BACKGROUND SYSTEM -->
+    <div class="dynamic-bg-container" id="bg-manager">
+        <video muted loop playsinline class="bg-layer active" id="vid-1">
+            <source
+                src="https://assets.mixkit.co/videos/preview/mixkit-circuit-board-details-and-components-1643-large.mp4"
+                type="video/mp4">
+        </video>
+        <video muted loop playsinline class="bg-layer" id="vid-2">
+            <source
+                src="https://assets.mixkit.co/videos/preview/mixkit-artificial-intelligence-and-high-tech-concept-background-40760-large.mp4"
+                type="video/mp4">
+        </video>
+        <video muted loop playsinline class="bg-layer" id="vid-3">
+            <source
+                src="https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-a-circuit-board-1644-large.mp4"
+                type="video/mp4">
+        </video>
+    </div>
+
+    <!-- NAV TABS -->
+    <nav class="nav-tabs">
+        <a href="index.html" class="nav-tab active">Home</a>
+        <a href="projects/about.html" class="nav-tab">About</a>
+        <a href="projects/company.html" class="nav-tab">Company</a>
+        <a href="projects/freelancer-projects.html" class="nav-tab">Freelancer</a>
+        <a href="projects/ai-projects.html" class="nav-tab">AI MODELS</a>
+        <a href="projects/technologies.html" class="nav-tab">Technology</a>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="section">
+        <div class="content-wrapper hero-content reveal">
+            <p class="subtitle" style="letter-spacing: 0.5em;">AI-ML & Prompt Engineer</p>
+            <h1 class="title">Shreyas Shendge</h1>
+            <p class="subtitle" style="font-size: 1rem; text-transform: none; opacity: 0.8;">Orchestrating Intelligent
+                Systems. Driving Quality through Predictive ML.</p>
+            <div class="social-links">
+                <a href="https://github.com/shreyasshendge96" target="_blank" class="social-link">Github</a>
+                <a href="https://www.youtube.com/@unique_veda" target="_blank" class="social-link">YouTube</a>
+            </div>
+            <div style="margin-top: 3rem;">
+                <button id="open-profile" class="btn-cinematic">Meet Shreyas</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL PROFILE -->
+    <div class="modal-overlay" id="profile-modal">
+        <div class="modal-content">
+            <span class="modal-close" id="close-profile">&times;</span>
+            <div class="profile-section">
+                <div class="profile-img-container">
+                    <img src="My_Pic_Shreyas.jpeg" alt="Shreyas Shendge" class="profile-img">
+                </div>
+                <div class="profile-details">
+                    <p class="subtitle" style="text-align: left;">Professional Presence</p>
+                    <h2>Shreyas Shendge</h2>
+
+                    <div class="bio-item">
+                        <h4>Expertise & Potential</h4>
+                        <p>Specialized in bridging the gap between raw architectural data and intelligent, automated
+                            enterprise solutions. I architect systems that don't just process data—they predict
+                            outcomes.</p>
+                    </div>
+
+                    <div class="bio-item">
+                        <h4>The Learning Engine</h4>
+                        <p>Driven by a "Lead Learner" mindset. I possess the velocity to rapidly adapt to emerging AI
+                            frameworks and integrate them into production-ready, high-compliance architectures.</p>
+                    </div>
+
+                    <div class="bio-item">
+                        <h4>The Mission</h4>
+                        <p>To lead the transition toward self-healing production environments using predictive ML and
+                            robust system-level quality assurance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PROFESSIONAL VALUE & IMPACT -->
+    <section id="professional-value" class="section" style="padding: 100px 0;">
+        <div class="content-wrapper">
+            <p class="subtitle">Personal Value</p>
+            <h2 class="title" style="font-size: 3.5rem;">Why Hire Me?</h2>
+            <div class="value-grid">
+                <div class="value-card reveal">
+                    <h3>Commercial Impact</h3>
+                    <p>I don't just build models; I solve business problems. By integrating agentic AI and predictive
+                        diagnostics, I directly reduce operational overhead and ensure zero-loss data integrity for
+                        high-stakes enterprise systems.</p>
+                </div>
+                <div class="value-card reveal">
+                    <h3>Technological Velocity</h3>
+                    <p>I specialize in rapid execution. Using advanced Prompt Engineering and automated workflows, I
+                        bridge the gap between complex architectural requirements and production-ready solutions faster
+                        than traditional methods.</p>
+                </div>
+                <div class="value-card reveal">
+                    <h3>Lead Learner Mindset</h3>
+                    <p>In a field that changes daily, my greatest asset is adaptability. I have a proven track record of
+                        mastering emerging frameworks and deploying them to create self-healing, high-compliance
+                        production environments.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WORK PORTFOLIO HUB -->
+    <section class="section" style="height: auto; padding: 100px 0;">
+        <div class="content-wrapper">
+            <p class="subtitle">Showcase</p>
+            <h2 class="title" style="font-size: 2.5rem; margin-bottom: 3rem;">Work Overview</h2>
+
+            <div class="carousel-view">
+                <div class="carousel-track" id="rotating-track">
+                    <!-- UNIQUE ITEMS -->
+                    <div class="carousel-item">
+                        <div class="project-card" style="margin: 0; width: 100%;">
+                            <p class="subtitle">Enterprise</p>
+                            <h2 class="project-title" style="font-size: 1.5rem;">Helix Security</h2>
+                            <p class="project-desc">MFA, Gemalto, & Platinum-level stability.</p>
+                            <a href="projects/company.html" class="btn-cinematic" style="font-size: 0.6rem;">View
+                                Details</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="project-card" style="margin: 0; width: 100%;">
+                            <p class="subtitle">Intelligence</p>
+                            <h2 class="project-title" style="font-size: 1.5rem;">AI Models</h2>
+                            <p class="project-desc">Diagnostic health & predictive analytics.</p>
+                            <a href="projects/ai-projects.html" class="btn-cinematic" style="font-size: 0.6rem;">Explore
+                                AI</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="project-card" style="margin: 0; width: 100%;">
+                            <p class="subtitle">Innovation</p>
+                            <h2 class="project-title" style="font-size: 1.5rem;">Freelance</h2>
+                            <p class="project-desc">POS, KDS, & high-performance kiosks.</p>
+                            <a href="projects/freelancer-projects.html" class="btn-cinematic"
+                                style="font-size: 0.6rem;">See Work</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="project-card" style="margin: 0; width: 100%;">
+                            <p class="subtitle">Foundations</p>
+                            <h2 class="project-title" style="font-size: 1.5rem;">Tech Stack</h2>
+                            <p class="project-desc">React, Node.js, & Data Engineering.</p>
+                            <a href="projects/technologies.html" class="btn-cinematic"
+                                style="font-size: 0.6rem;">Mastery</a>
+                        </div>
+                    </div>
+
+                    <!-- DUPLICATES FOR LOOP -->
+                    <div class="carousel-item">
+                        <div class="project-card" style="margin: 0; width: 100%;">
+                            <p class="subtitle">Enterprise</p>
+                            <h2 class="project-title" style="font-size: 1.5rem;">Helix Security</h2>
+                            <p class="project-desc">MFA, Gemalto, & Platinum-level stability.</p>
+                            <a href="projects/company.html" class="btn-cinematic" style="font-size: 0.6rem;">View
+                                Details</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="project-card" style="margin: 0; width: 100%;">
+                            <p class="subtitle">Intelligence</p>
+                            <h2 class="project-title" style="font-size: 1.5rem;">AI Models</h2>
+                            <p class="project-desc">Diagnostic health & predictive analytics.</p>
+                            <a href="projects/ai-projects.html" class="btn-cinematic" style="font-size: 0.6rem;">Explore
+                                AI</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="project-card" style="margin: 0; width: 100%;">
+                            <p class="subtitle">Innovation</p>
+                            <h2 class="project-title" style="font-size: 1.5rem;">Freelance</h2>
+                            <p class="project-desc">POS, KDS, & high-performance kiosks.</p>
+                            <a href="projects/freelancer-projects.html" class="btn-cinematic"
+                                style="font-size: 0.6rem;">See Work</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="project-card" style="margin: 0; width: 100%;">
+                            <p class="subtitle">Foundations</p>
+                            <h2 class="project-title" style="font-size: 1.5rem;">Tech Stack</h2>
+                            <p class="project-desc">React, Node.js, & Data Engineering.</p>
+                            <a href="projects/technologies.html" class="btn-cinematic"
+                                style="font-size: 0.6rem;">Mastery</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT / FINAL -->
+    <footer class="section" style="height: 60vh;">
+        <div class="content-wrapper reveal">
+            <h2 class="title" style="font-size: 2.5rem;">Collaboration & Growth</h2>
+            <p style="color: var(--text-muted); margin-bottom: 2rem; font-size: 1.1rem;">shreyasshendge96@gmail.com |
+                +91 – 7498807855</p>
+            <div class="social-links">
+                <a href="https://github.com/shreyasshendge96" target="_blank" class="social-link">Github</a>
+                <a href="https://www.youtube.com/@unique_veda" target="_blank" class="social-link">YouTube</a>
+            </div>
+            <div style="margin-top: 3rem;">
+                <p class="subtitle" style="font-size: 0.7rem; letter-spacing: 0.3em; opacity: 0.5;">Pune, India |
+                    Engineering & AI Integration</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

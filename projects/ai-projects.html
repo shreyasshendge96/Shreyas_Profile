@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Models | Shreyas Shendge</title>
+    <link rel="stylesheet" href="../css/cinematic.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js" defer></script>
+    <script src="../js/cinematic.js" defer></script>
+    <style>
+        .ai-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .ai-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 2.5rem;
+            border-radius: 1.5rem;
+            transition: all 0.3s ease;
+            text-align: left;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .ai-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateY(-10px);
+        }
+
+        .btn-more {
+            background: none;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #fff;
+            padding: 0.6rem 1.2rem;
+            border-radius: 0.5rem;
+            font-size: 0.8rem;
+            cursor: pointer;
+            margin-top: 1.5rem;
+            transition: all 0.3s;
+            align-self: flex-start;
+        }
+
+        .btn-more:hover {
+            background: #fff;
+            color: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav-tabs">
+        <a href="../index.html" class="nav-tab">Home</a>
+        <a href="about.html" class="nav-tab">About</a>
+        <a href="company.html" class="nav-tab">Company</a>
+        <a href="freelancer-projects.html" class="nav-tab">Freelancer</a>
+        <a href="ai-projects.html" class="nav-tab active">AI MODELS</a>
+        <a href="technologies.html" class="nav-tab">Technology</a>
+    </nav>
+
+    <section class="section">
+        <video autoplay muted loop playsinline class="bg-video">
+            <source
+                src="https://assets.mixkit.co/videos/preview/mixkit-artificial-intelligence-and-high-tech-concept-background-40760-large.mp4"
+                type="video/mp4">
+        </video>
+        <div class="content-wrapper" style="max-width: 1400px;">
+            <p class="subtitle">Predictive Intelligence</p>
+            <h1 class="title">AI Models</h1>
+            <div class="ai-grid">
+                <!-- Project 1 -->
+                <div class="ai-card reveal">
+                    <div>
+                        <h3>Heart Attack Detection (Data-Driven)</h3>
+                        <p class="project-desc">This heart attack detection system predicts cardiac risk using patient
+                            medical history, lifestyle data, and clinical laboratory reports.</p>
+                    </div>
+                    <button class="btn-more" onclick="openModal('heart-attack')">More Information</button>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="ai-card reveal">
+                    <div>
+                        <h3>Lung Cancer Detection (Non-Imaging)</h3>
+                        <p class="project-desc">This system operates without using any imaging data. It relies entirely
+                            on patient medical history, lifestyle factors, and clinical symptoms.</p>
+                    </div>
+                    <button class="btn-more" onclick="openModal('lung-cancer')">More Information</button>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="ai-card reveal">
+                    <div>
+                        <h3>Churn Prediction (Behavior-Based)</h3>
+                        <p class="project-desc">Analyzing customer behavior and historical interaction data to identify
+                            users who are likely to discontinue a product or service.</p>
+                    </div>
+                    <button class="btn-more" onclick="openModal('churn')">More Information</button>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="ai-card reveal">
+                    <div>
+                        <h3>Product Sales Prediction (Forecasting)</h3>
+                        <p class="project-desc">Forecasts future demand using historical sales records, seasonal trends,
+                            and market behavior data to optimize inventory and performance.</p>
+                    </div>
+                    <button class="btn-more" onclick="openModal('sales')">More Information</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODALS -->
+    <div class="modal-overlay" id="project-modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <div class="modal-body" id="modal-body-content">
+                <!-- Content will be injected by JS -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const projectData = {
+            'heart-attack': {
+                title: 'Heart Attack Detection (Data-Driven)',
+                content: `This heart attack detection system predicts cardiac risk using patient medical history, lifestyle data, and clinical laboratory reports. The model analyzes parameters such as age, blood pressure, cholesterol levels, blood sugar, heart rate, and existing health conditions to identify early warning signs of a potential heart attack.<br><br>By leveraging machine learning, the system classifies patients into risk categories, enabling healthcare professionals to take preventive actions and reduce emergency cardiac events. The solution acts as a clinical decision-support tool for proactive heart health management.`
+            },
+            'lung-cancer': {
+                title: 'Lung Cancer Detection (Non-Imaging Based)',
+                content: `This lung cancer detection system operates without using any imaging data such as CT scans or X-rays. It relies entirely on patient medical history, lifestyle factors, clinical symptoms, and laboratory test results to predict lung cancer risk.<br><br>Key inputs include smoking history, occupational exposure, family history, respiratory conditions, oxygen levels, blood markers, and inflammation indicators. The system provides an early risk assessment, helping healthcare professionals identify patients who may require further medical evaluation through a non-invasive and cost-effective approach.`
+            },
+            'churn': {
+                title: 'Churn Prediction (Behavior-Based)',
+                content: `The churn prediction system analyzes customer behavior and historical interaction data to identify users who are likely to discontinue a product or service. Inputs include usage frequency, transaction history, service engagement, and support interaction patterns.<br><br>Using predictive analytics, the model enables businesses to take proactive retention measures such as personalized offers and targeted communication. This helps reduce customer loss, improve satisfaction, and maintain stable revenue growth.`
+            },
+            'sales': {
+                title: 'Product Sales Prediction (Data-Driven Forecasting)',
+                content: `This product sales prediction system forecasts future demand using historical sales records, seasonal trends, and market behavior data. The model identifies patterns that influence purchasing behavior and predicts upcoming sales performance.<br><br>The system supports better inventory planning, pricing strategies, and marketing decisions. By providing accurate sales forecasts, it helps businesses minimize losses, optimize operations, and improve overall revenue efficiency.`
+            }
+        };
+
+        function openModal(projectId) {
+            const data = projectData[projectId];
+            const modal = document.getElementById('project-modal');
+            const content = document.getElementById('modal-body-content');
+
+            content.innerHTML = `<h2>${data.title}</h2><p>${data.content}</p>`;
+            modal.classList.add('active');
+
+            // Assuming lenis is global if we wanted to stop it, but simple modal for now
+            if (window.lenis) window.lenis.stop();
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('project-modal');
+            modal.classList.remove('active');
+            if (window.lenis) window.lenis.start();
+        }
+
+        // Close on overlay click
+        document.getElementById('project-modal').addEventListener('click', function (e) {
+            if (e.target === this) closeModal();
+        });
+    </script>
+</body>
+
+</html>

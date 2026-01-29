@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Projects | Shreyas Shendge</title>
+    <link rel="stylesheet" href="../css/cinematic.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js" defer></script>
+    <script src="../js/cinematic.js" defer></script>
+    <style>
+        .helix-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .helix-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 2.5rem;
+            border-radius: 1.5rem;
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+
+        .helix-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateY(-10px);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .tech-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .tech-pill {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 0.3rem 0.8rem;
+            border-radius: 1rem;
+            font-size: 0.75rem;
+            color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- NAV TABS -->
+    <nav class="nav-tabs">
+        <a href="../index.html" class="nav-tab">Home</a>
+        <a href="about.html" class="nav-tab">About</a>
+        <a href="company.html" class="nav-tab active">Company</a>
+        <a href="freelancer-projects.html" class="nav-tab">Freelancer</a>
+        <a href="ai-projects.html" class="nav-tab">AI MODELS</a>
+        <a href="technologies.html" class="nav-tab">Technology</a>
+    </nav>
+
+    <section class="section">
+        <video autoplay muted loop playsinline class="bg-video">
+            <source
+                src="https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-a-circuit-board-1644-large.mp4"
+                type="video/mp4">
+        </video>
+        <div class="content-wrapper">
+            <p class="subtitle">The Helix Ecosystem</p>
+            <h1 class="title">Enterprise Security & Stability</h1>
+
+            <div class="helix-grid">
+                <!-- Project 1: MFA -->
+                <div class="helix-card reveal">
+                    <p class="subtitle" style="font-size: 0.7rem;">Cybersecurity / IAM</p>
+                    <h2 class="project-title" style="font-size: 1.3rem;">Helix MFA Implementation</h2>
+                    <p class="project-desc">Strengthening security across Engage, Standman, and DIM through robust
+                        Multi-Factor Authentication. Zero defects in production with optimized OTP flows.</p>
+                    <div class="tech-list">
+                        <span class="tech-pill">Manual Testing</span>
+                        <span class="tech-pill">SQL Validation</span>
+                        <span class="tech-pill">Security Testing</span>
+                        <span class="tech-pill">API Validation</span>
+                    </div>
+                </div>
+
+                <!-- Project 2: Gemalto -->
+                <div class="helix-card reveal">
+                    <p class="subtitle" style="font-size: 0.7rem;">Security Infrastructure</p>
+                    <h2 class="project-title" style="font-size: 1.3rem;">Gemalto Replacement (KMS Migration)</h2>
+                    <p class="project-desc">Seamless removal of Gemalto dependency and validation of new Key Management
+                        Service (KMS) for high-compliance encryption workflows.</p>
+                    <div class="tech-list">
+                        <span class="tech-pill">KMS Validation</span>
+                        <span class="tech-pill">Database Testing</span>
+                        <span class="tech-pill">SQL</span>
+                        <span class="tech-pill">Compliance</span>
+                    </div>
+                </div>
+
+                <!-- Project 3: BAU -->
+                <div class="helix-card reveal">
+                    <p class="subtitle" style="font-size: 0.7rem;">Application Support</p>
+                    <h2 class="project-title" style="font-size: 1.3rem;">Helix BAU Ticket Handling</h2>
+                    <p class="project-desc">Continuous delivery and maintenance with 100% ticket delivery success within
+                        SLA. Delivering fixes for critical production defects.</p>
+                    <div class="tech-list">
+                        <span class="tech-pill">HP ALM</span>
+                        <span class="tech-pill">MTM</span>
+                        <span class="tech-pill">Regression Testing</span>
+                    </div>
+                </div>
+
+                <!-- Project 4: KTLO -->
+                <div class="helix-card reveal">
+                    <p class="subtitle" style="font-size: 0.7rem;">Platform Stability</p>
+                    <h2 class="project-title" style="font-size: 1.3rem;">Helix KTLO (Keep The Lights On)</h2>
+                    <p class="project-desc">Ensuring 24/7 platform availability and reliability through rigorous
+                        smoke/sanity testing and rapid hotfix validations.</p>
+                    <div class="tech-list">
+                        <span class="tech-pill">Stability Monitoring</span>
+                        <span class="tech-pill">Smoke Testing</span>
+                        <span class="tech-pill">Hotfix Validation</span>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 5rem; text-align: center;">
+                <a href="../index.html" class="btn-cinematic">Return Overview</a>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technology | Shreyas Shendge</title>
+    <link rel="stylesheet" href="../css/cinematic.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js" defer></script>
+    <script src="../js/cinematic.js" defer></script>
+    <style>
+        .tech-container {
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .tech-group h2 {
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            border-left: 3px solid #fff;
+            padding-left: 1rem;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .tech-tag {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 0.6rem 1.2rem;
+            border-radius: 0.5rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .tech-tag:hover {
+            background: #fff;
+            color: #000;
+            transform: translateY(-5px);
+        }
+
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .expertise-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 2.5rem;
+            border-radius: 1rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .expertise-card h3 {
+            color: #fff;
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 0.5rem;
+        }
+
+        .expertise-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .expertise-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .expertise-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #fff;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- NAV TABS -->
+    <nav class="nav-tabs">
+        <a href="../index.html" class="nav-tab">Home</a>
+        <a href="about.html" class="nav-tab">About</a>
+        <a href="company.html" class="nav-tab">Company</a>
+        <a href="freelancer-projects.html" class="nav-tab">Freelancer</a>
+        <a href="ai-projects.html" class="nav-tab">AI MODELS</a>
+        <a href="technologies.html" class="nav-tab active">Technology</a>
+    </nav>
+
+    <section class="section">
+        <video autoplay muted loop playsinline class="bg-video">
+            <source
+                src="https://assets.mixkit.co/videos/preview/mixkit-data-center-server-units-corridor-view-1628-large.mp4"
+                type="video/mp4">
+        </video>
+        <div class="content-wrapper" style="max-width: 1200px;">
+            <p class="subtitle">The Core Expertise</p>
+            <h1 class="title">Technologies & Skills</h1>
+
+            <div class="tech-container">
+                <!-- Row 1: Skill Tags -->
+                <div class="tech-group reveal">
+                    <h2>AI & Machine Learning</h2>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Python (Pandas, NumPy, Matplotlib)</span>
+                        <span class="tech-tag">Machine Learning</span>
+                        <span class="tech-tag">Prompt Engineering</span>
+                        <span class="tech-tag">Whisper & VOSK</span>
+                        <span class="tech-tag">LLM Fundamentals</span>
+                        <span class="tech-tag">Agentic AI Workflows</span>
+                        <span class="tech-tag">Exploratory Data Analysis (EDA)</span>
+                        <span class="tech-tag">Streamlit</span>
+                    </div>
+                </div>
+
+                <div class="tech-group reveal">
+                    <h2>Quality Engineering & Automation</h2>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Manual Testing</span>
+                        <span class="tech-tag">Database Testing</span>
+                        <span class="tech-tag">DWH/ETL Validation</span>
+                        <span class="tech-tag">Web Service Testing</span>
+                        <span class="tech-tag">Selenium Java</span>
+                        <span class="tech-tag">Tosca</span>
+                        <span class="tech-tag">Katalon</span>
+                        <span class="tech-tag">Soap UI</span>
+                        <span class="tech-tag">Postman</span>
+                        <span class="tech-tag">REST API</span>
+                        <span class="tech-tag">Waterfall & Agile</span>
+                        <span class="tech-tag">Regression Validation</span>
+                    </div>
+                </div>
+
+                <div class="tech-group reveal">
+                    <h2>Databases, Tools & Infrastructure</h2>
+                    <div class="tech-tags">
+                        <span class="tech-tag">PostgreSQL / SQL</span>
+                        <span class="tech-tag">Unix / Linux</span>
+                        <span class="tech-tag">JIRA / HP ALM</span>
+                        <span class="tech-tag">Power BI</span>
+                        <span class="tech-tag">Job Run Management</span>
+                        <span class="tech-tag">Backend Data Verification</span>
+                        <span class="tech-tag">Telecom BSS/OSS Mediation</span>
+                    </div>
+                </div>
+
+                <!-- Row 2: Detailed Expertise Cards -->
+                <div class="expertise-grid">
+                    <div class="expertise-card reveal">
+                        <h3>Machine Learning & AI</h3>
+                        <ul class="expertise-list">
+                            <li>Experience with ML techniques for structured data analysis and decision-support.</li>
+                            <li>Applied feature engineering, data preprocessing, and EDA to optimize models.</li>
+                            <li>Optimized accuracy using data cleaning, feature selection, and hyperparameter tuning.
+                            </li>
+                            <li>Hands-on with performance metrics: Accuracy, Precision, Recall, F1 and Confusion Matrix.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="expertise-card reveal">
+                        <h3>AI Model & Language Processing</h3>
+                        <ul class="expertise-list">
+                            <li>Worked with Whisper and VOSK for high-accuracy audio-to-text conversion.</li>
+                            <li>Applied advanced prompt engineering to control AI output structure and stability.</li>
+                            <li>Deep understanding of Large Language Model (LLM) fundamentals and agentic workflows.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="expertise-card reveal">
+                        <h3>Databases & Data Engineering</h3>
+                        <ul class="expertise-list">
+                            <li>Extensive work with PostgreSQL and SQL for large-scale relational data storage.</li>
+                            <li>Validated complex ETL processes and high-volume data pipelines.</li>
+                            <li>Conducted backend data verification to ensure zero-loss integrity in mediation systems.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="expertise-card reveal">
+                        <h3>Quality & Reliability Engineering</h3>
+                        <ul class="expertise-list">
+                            <li>Performed end-to-end workflow validation across AI and enterprise backend components.
+                            </li>
+                            <li>Verified AI outputs for real-world accuracy and production reliability.</li>
+                            <li>Expertise in Integration, System, and Regression validation for high-compliance systems.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="expertise-card reveal">
+                        <h3>Programming & Frontend</h3>
+                        <ul class="expertise-list">
+                            <li>Python for ML, AI integration, backend architecture, and workflow automation.</li>
+                            <li>UI development using HTML, CSS, and JS for dashboard-driven applications.</li>
+                            <li>Implemented frontend–backend integration for seamless, role-based visibility.</li>
+                        </ul>
+                    </div>
+
+                    <div class="expertise-card reveal">
+                        <h3>Deployment & Visualization</h3>
+                        <ul class="expertise-list">
+                            <li>Deployed machine learning models using Streamlit for interactive user experiences.</li>
+                            <li>Enabled real-time inference for high-impact, interactive AI applications.</li>
+                            <li>Developed data-driven applications tailored for end-user visibility and impact.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 5rem; text-align: center;">
+                <a href="../index.html" class="btn-cinematic">View Full Portfolio</a>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
